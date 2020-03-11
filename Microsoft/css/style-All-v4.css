@@ -1,0 +1,578 @@
+*{
+    box-sizing: border-box;
+    font-family: '微軟正黑體';
+}
+
+body{
+    margin: 0;
+}
+.bg , img{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+a:link , a:visited{
+    color: #262626;
+}
+a:focus , button:focus , :focus{
+    outline: dashed black 1px;
+}
+button{
+    border: 0;
+    background-color: unset;
+}
+.all{
+    margin: auto;
+    width: 100%;
+    max-width: calc(1600px + 10%);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+/* NavBar區塊 */
+.navBar{
+    /* height: 56px; */
+    display: flex;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 136px;
+    /* height: 54px; */
+    padding: 5px 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.itemsLeft{
+    display: flex;
+    width: calc(70% - 137px);
+    margin: 0 0 0 10px;
+    /* background-color: aquamarine; */
+}
+.products{
+    font-size: 13px;
+    margin: 0 15px;
+    padding: 8px 3px;
+    position: relative;
+}
+.products a::before{
+    background: currentColor;
+    content: "";
+    display: none;
+    height: 2px;
+    position: absolute;
+    left:0px;
+    bottom: -2px;
+    width: 100%;
+}
+.products a:hover::before , .txt:hover::before{
+    display: block;
+}
+.itemsRight{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+}
+.itemsRight-L , .itemsRight-R{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.actions{
+    display: flex;
+    align-items: center;
+    padding: 0px 5px 2px 5px;
+}
+.toggle{
+    display: none;
+    z-index: 5;
+    position: relative;
+    cursor: pointer;
+    color: lightyellow;
+}
+.toggle-list{
+    position: absolute;
+    top: 100%;
+    background-color: #727272;
+}
+.toggle-list li{
+    list-style: none;
+    display: inline-block;
+    background-color: #727272;
+    width: 80vw;
+    position: relative;
+    padding: 10px;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.pointer , .all_microsoft li{
+    cursor: pointer;
+}
+
+label ul,li{
+    list-style: none;
+}
+.inside::after{
+    color: lightyellow;
+    content: '\0020\02C5';
+}
+.more{
+    width: 110px;
+    position: relative;
+}
+.search , .shopping , .login{
+    width: 90px;
+}
+.txt{
+    font-size: 13px;
+}
+.txt::before{
+    background: currentColor;
+    content: "";
+    display: none;
+    height: 2px;
+    position: absolute;
+    left:0px;
+    bottom: -2px;
+    width: 80%;
+}
+/* All Microsoft 收合清單 */
+input{
+    display: none;
+}
+input[type=checkbox]:checked + div{
+    opacity: 0;
+    max-height: 0;
+}
+.all_microsoft{
+    background-color: #f2f2f2;
+    width: 70vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    /* opacity: 1; */
+    z-index: 5;
+    top: 150%;
+    left: -50vw;
+}
+.all_microsoft li{
+    list-style: none;
+    padding: 5px 0;
+}
+.all_microsoft:hover{
+    display: flex;
+}
+.toggle-icon , .search-icon , .shopping-icon{
+    width: 16px;
+}
+.search-icon{
+    margin: 0 13px;
+}
+.shopping-icon{
+    margin: 0 10px 0 7px;
+}
+.login-icon{
+    width: 30px;
+    margin: 0 5px;
+}
+/* 上面banner區塊 */
+.bannerTop{
+    background-color: #e6e6e6;
+    position: relative;
+}
+.bannerTop-img-1{
+    display: block;
+}
+.bannerTop-img-2 , .bannerTop-img-3{
+    display: none;
+}
+.bannerTop-container{
+    /* width: 100%; */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0 68px;
+}
+.bannerTop-title{
+    font-size: 45px;
+    padding: 2px 0 3px;
+    font-weight: 650;
+}
+.bannerTop-conten{
+    font-style: 15px;
+    padding: 15px 0;
+    font-weight: 500;
+}
+.bannerTop-btn{
+    width: 121px;
+    height: 37px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 20px 6px 22px;
+    margin: 12px 0 0 0;
+}
+.bannerTop-btn:hover{
+    padding: 10px 15px 6px 17px;
+}
+.bannerTop-btn-txt{
+    color: white;
+}
+.bannerTop-btn-icon{
+    margin: 0 0 0 3px;
+    width: 12px;
+    height: 15px;
+}
+/* 所有圖文大小 */
+.col , .contentTop a{
+    width: calc(25% - 12px);
+}
+.col .btn{
+    color: #0067b8;
+    font-weight: 600;
+}
+.imgStyle:hover img{
+    opacity: .9;
+}
+
+/* 所有圖文區塊內文樣式 */
+.title{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 37px 0 0 0;
+    padding: 1px 12px 2px 0;
+}
+.conten{
+    font-size: 15px;
+    padding: 2px 12px 0 0;
+}
+.btn{
+    font-size: 15px;
+    padding: 10px 3px 7px 0;
+    transition: 0.5s linear;
+    position: relative;
+    transition: 0.8s;
+}
+.btn:hover{
+    padding: 10px 20px 7px 0;
+}
+.btnText::before{
+    background: currentColor;
+    content: "";
+    display: none;
+    height: 2px;
+    position: absolute;
+    left:0px;
+    bottom: 5px;
+    width: 60px;
+    transition: 0.5s;
+}
+.btnText:hover::before{
+    display: block;
+}
+.btn::after{
+    content:'\2002>';
+    transition: 0.5s;
+}
+/* 上面圖文區塊 */
+.contentTop{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 48px 0 0 0;
+}
+/* 下面banner區塊 */
+.bannerBtm{
+    position: relative;
+    padding: 48px 0 0 0;
+}
+.bannerBtm-img-1{
+    display: block;
+}
+.bannerBtm-img-2 , .bannerBtm-img-3{
+    display: none;
+}
+.bannerBtm-container{
+    height: 100%;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0 68px;
+}
+.bannerBtm-title{
+    font-size: 45px;
+    padding: 2px 0 3px;
+    line-height: 28px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+}
+.bannerBtm-conten{
+    font-style: 15px;
+    font-weight: 400;
+    padding: 20px 0;
+}
+.bannerBtm-btn{
+    width: 121px;
+    height: 37px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px 20px 6px 22px;
+    margin: 12px 0 0 0;
+    transition: .4s;
+}
+.bannerBtm-btn-txt{
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+.bannerBtm-btn-icon{
+    margin: 0 0 0 3px;
+    width: 12px;
+    height: 15px;
+}
+.bannerBtm-btn:hover{
+    padding: 10px 15px 6px 17px;
+}
+/* 下面大標題 */
+.contentBtmHeading{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 36px 0 4px 0px;
+}
+/* 下面圖文區塊 */
+.contentBtm{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 15px 0 0 0;
+}
+/* follow區塊 */
+.follow {
+    padding: 48px 0 70px 0;
+    height: 80px;
+    color: rgba(0,0,0,.6);
+    display: flex;
+}
+.follow-text{
+    line-height: 30px;
+}
+.social-media img{
+    display: inline-block;
+    margin: 0 0 0 8px;
+    width:32px;
+    height:32px;
+    border: 2px solid white;
+}
+/* footer區塊 */
+footer{
+    display: flex;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 0 0;
+    margin: auto;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    position: relative;
+}
+.footerTop , .footerBtm{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 5% 0;
+}
+footer li{
+    list-style: none;
+}
+.footer-head{
+    font-size: 15px;
+    line-height: 15px;
+    color: #616161;
+}
+.footer-head li{
+    font-size: 11px;
+    padding: 5px 0;
+    color: #616161;
+}
+.language{
+    display: flex;
+    padding: 0 0 0 40px;
+    align-self: flex-end;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 5px;
+    left: 1%;
+}
+.lan-img{
+    margin: 0 15px;
+}
+.lan-text{
+    font-size: 12px;
+}
+.lan-text:hover{
+    text-decoration: underline;
+}
+.privacy{
+    margin-left: auto;
+    position: absolute;
+    bottom: 5px;
+    right: 1%;
+}
+.privacy li{
+    display: inline-block;
+    list-style: none;
+    font-size: 10px;
+    margin: 0 5px;
+}
+.text-deco:hover{
+    text-decoration: black underline;
+}
+/* -------小螢幕版---------- */
+@media(max-width: 1399px){
+    .more{
+        width: 120px;
+    }
+    .search , .shopping , .login{
+        width: unset;
+    }
+    .search-txt , .shopping-txt , .login-txt{
+        display: none;
+    }
+}
+/* -----第二小螢幕版-------- */
+@media(max-width: 1083px){
+    .all{
+        padding: 0;
+    }
+    .bannerTop-img-1 , .bannerBtm-img-1{
+        display: none;
+    }
+    .bannerTop-img-2 , .bannerBtm-img-2{
+        display: block;
+    }
+    .col{
+        width: calc(50% - 24px);
+        margin: 30px 12px;
+    }
+    .contentTop , .contentBtm{
+        margin: 20px 0 0 0;
+        padding: 0 36px;
+        flex-wrap: wrap;
+    }
+    .contentBtmHeading{
+        padding:48px 0 4px 48px;
+    }
+    .follow{
+        padding: 0 24px;
+    }
+    footer{
+        flex-flow: column wrap;
+    }
+    .footerTop , .footerBtm{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+/* -------平板版--------- */
+@media(max-width: 859px){
+    .navBar{
+        padding: 0 10px;
+    }
+    .logo{
+        position: absolute;
+        left: calc(50% - 68px); 
+    }
+    .itemsLeft , .more{
+        display: none;
+    }
+    .itemsRight{
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+    }
+    .toggle{
+        display: block;
+    }
+    .follow {
+        font-size: 15px;
+        padding: 48px 0 48px 48px;
+    }
+}
+/* -----第二小平板版------- */
+@media(max-width: 767px){
+    
+    .bannerTop-img-2 , .bannerBtm-img-2{
+        display: none;
+    }
+    .bannerTop-img-3 , .bannerBtm-img-3{
+        display: block;
+    }
+    .bannerTop-container{
+        position: unset;
+        height: 300px;
+        align-items: center;
+    }
+    .bannerBtm-container{
+        position: unset;
+        height: 300px;
+        align-items: center;
+    }
+    .language{
+        position: unset;
+        margin: 0 auto 0 0;
+        justify-content: flex-start;
+        padding: 0;
+    }
+    .privacy{
+        position: unset;
+        margin-left: unset;
+    }
+    .privacy ul{
+        padding: 0 0 0 10px;
+    }
+}
+/* --------手機板---------- */
+@media(max-width: 539px){
+    .col{
+        width: calc(100% - 24px);
+    }
+    .contentTop{
+        padding: 0 12px;
+    }
+    .title{
+        margin: 12px 0 0 0;
+    }
+    .contentBtmHeading{
+        padding:48px 0 4px 24px;
+    }
+    .contentBtm{
+        padding: 0 12px;
+    }
+    .follow {
+        padding: 48px 0 48px 20px;
+    }
+    .footerTop , .footerBtm{
+        flex-flow: column;
+    }
+}

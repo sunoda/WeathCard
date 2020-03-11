@@ -1,0 +1,667 @@
+*{
+    box-sizing: border-box;
+    font-family: '微軟正黑體';
+}
+body{
+    margin: 0;
+}
+.bg , img{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: #616161;
+    &link , &:visited{
+        color: #262626;
+    }
+}
+:focus{
+    outline: dashed black 1px;
+}
+button{
+    border: 0;
+    background-color: unset;
+}
+.actions{
+    display: flex;
+    align-items: center;
+    padding: 0px 5px 2px 5px;
+}
+.pointer , .all_microsoft li{
+    cursor: pointer;
+}
+.text-deco{
+    &:hover{
+    text-decoration: black underline;
+    }
+}
+.inside::after{
+    color: lightyellow;
+    content: '\0020\02C5';
+}
+.txt{
+    font-size: 13px;
+    &::before{
+        background: currentColor;
+        content: "";
+        display: none;
+        height: 2px;
+        position: absolute;
+        left:0px;
+        bottom: -2px;
+        width: 80%;
+        &hover{
+            display: block;
+        }
+    }
+}
+/* All Microsoft 收合清單 */
+input{
+    display: none;
+}
+input[type=checkbox]:checked + div{
+    opacity: 0;
+    max-height: 0;
+}
+/* 所有圖文大小 */
+.col{
+    width: calc(25% - 12px);
+    .btn{
+        color: #0067b8; 
+        font-weight: 600;
+    }
+    @media(max-width: 1083px){
+        width: calc(50% - 24px);
+        margin: 30px 12px;
+    }
+    @media(max-width: 539px){
+        width: calc(100% - 24px);
+    }
+}
+.imgStyle{
+    
+    &:hover{
+        img{opacity: .9;}
+    }
+}
+/* 所有圖文區塊內文樣式 */
+.title{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 37px 0 0 0;
+    padding: 1px 12px 2px 0;
+    color: black;
+    @media(max-width: 539px){
+        margin: 12px 0 0 0;
+    }
+}
+.conten{
+    font-size: 15px;
+    padding: 2px 12px 0 0;
+    color: black;
+}
+.btn{
+    font-size: 15px;
+    padding: 10px 3px 7px 0;
+    transition: 0.5s linear;
+    position: relative;
+    transition: 0.8s;
+    &:hover{
+        padding: 10px 20px 7px 0;
+    }
+}
+.btnText{
+    &::before{
+        background: currentColor;
+        content: "";
+        display: none;
+        height: 2px;
+        position: absolute;
+        left:0px;
+        bottom: 5px;
+        width: 60px;
+        transition: 0.5s;
+        &:hover{
+            display: block;
+        }
+    }
+}
+.btn{
+    &::after{
+    content:'\2002>';
+    transition: 0.5s;
+    }
+}
+.all{
+    margin: auto;
+    width: 100%;
+    max-width: calc(1600px + 10%);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 5%;
+    /* NavBar區塊 */
+    .navBar{
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        .logo1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 136px;
+            padding: 5px 3px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center; 
+            // order: -99;
+            @media (max-width:859px){
+                display: none;
+            }
+        }
+        .itemsLeft{
+            display: flex;
+            width: 70%;
+            margin: 0 0 0 10px;
+            .products{
+                font-size: 13px;
+                margin: 0 5px;
+                padding: 8px 3px;
+                color: black;
+                position: relative;
+                a::before{
+                        background: currentColor;
+                        content: "";
+                        display: none;
+                        height: 2px;
+                        position: absolute;
+                        left:0px;
+                        bottom: -2px;
+                        width: 100%;
+                        &:hover{
+                            display: block;
+                    }
+                }
+            }
+            @media (max-width:859px){
+                display: none;
+            }
+        }
+        .itemsRight{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            .itemsRight-L{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .toggle{
+                    display: none;
+                    z-index: 5;
+                    position: relative;
+                    cursor: pointer;
+                    color: lightyellow;
+                    .toggle-icon{
+                        width: 16px;
+                    }
+                    .toggle-list{
+                        position: absolute;
+                        top: 100%;
+                        background-color: #727272;
+                        li{
+                            list-style: none;
+                            display: inline-block;
+                            background-color: #727272;
+                            width: 80vw;
+                            position: relative;
+                            padding: 10px;
+                            height: 100%;
+                            overflow: hidden;
+                            cursor: pointer;
+                            }
+                        }
+                    @media (max-width:859px){
+                        display: block;
+                    }
+                }
+                .more{
+                    width: 110px;
+                    position: relative;
+                    .all_microsoft{
+                        background-color: #f2f2f2;
+                        width: 70vw;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        position: absolute;
+                        /* opacity: 1; */
+                        z-index: 5;
+                        top: 150%;
+                        left: -50vw;
+                        li{
+                            list-style: none;
+                            padding: 5px 0;
+                        }
+                        &:hover{
+                            display: flex;
+                        }
+                    }
+                    @media ( max-width:1399px){
+                        width: 120px;
+                    }
+                    @media (max-width:859px){
+                        display: none;
+                    }
+                }
+                .search{
+                    width: 90px;
+                    .search-icon{
+                        width: 16px;
+                        margin: 0 13px;
+                    }
+                    @media (max-width:1399px){
+                        width: unset;
+                        .search-txt{
+                            display: none;
+                        }
+                    }
+                }
+                @media (max-width:859px){
+                    flex: 1;
+                }
+            }
+            .logo2{
+                display: none;
+                justify-content: center;
+                align-items: center;
+                width: 136px;
+                padding: 5px 3px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center; 
+                // order: -99;
+                @media (max-width:859px){
+                    display: flex;
+                }
+            }
+            .itemsRight-R{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                .shopping{
+                    width: 90px;
+                    .shopping-icon{
+                        width: 16px;
+                        margin: 0 10px 0 7px;
+                    }
+                    @media (max-width:1399px){
+                        width: unset;
+                        .shopping-txt{
+                            display: none;
+                        }
+                    }
+                }
+                .login{
+                    width: 90px;
+                    .login-icon{
+                        width: 30px;
+                        margin: 0 5px;
+                    }
+                    @media (max-width:1399px){
+                        width: unset;
+                        .login-txt{
+                            display: none;
+                        }
+                    }
+                }
+                @media (max-width:859px){
+                    // width: 100%;
+                    height: 100%;
+                    justify-content: flex-end;
+                    flex: 1;
+                }
+                
+            }
+        }
+        @media (max-width:859px){
+            padding: 0 10px;
+            justify-content: center;
+        }
+    }
+    @media (max-width:1083px){
+        padding: 0;
+    }
+        /* 上面banner區塊 */
+    .bannerTop{
+        background-color: #e6e6e6;
+        position: relative;
+        .bannerTop-img-1{
+            display: block;
+            @media (max-width:1083px){
+                display: none;
+            }
+        }
+        .bannerTop-img-2{
+            display: none;
+            @media (max-width:1083px){
+                display: block;
+            }
+            @media(max-width: 767px){
+                display: none;
+            }
+        }
+        .bannerTop-img-3{
+            display: none;
+            @media(max-width: 767px){
+                display: block;
+            }
+        }
+        .bannerTop-container{
+            /* width: 100%; */
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin: 0 68px;
+            .bannerTop-title{
+                font-size: 45px;
+                padding: 2px 0 3px;
+                font-weight: 600;
+                color: black;
+                @media(max-width: 1399px){
+                    font-size: 24px;
+                }
+            }
+            .bannerTop-conten{
+                font-style: 15px;
+                padding: 15px 0;
+                font-weight: 500;
+                color: black;
+            }
+            .bannerTop-btn{
+                width: 121px;
+                height: 37px;
+                display: flex;
+                justify-content: space-between;
+                background-color: black;
+                font-weight: 600;
+                font-size: 15px;
+                padding: 10px 20px 6px 22px;
+                margin: 12px 0 0 0;
+                .bannerTop-btn-txt{
+                    color: white;
+                }
+                .bannerTop-btn-icon{
+                    margin: 0 0 0 3px;
+                    width: 12px;
+                    height: 15px;
+                }
+                &:hover{
+                    padding: 10px 15px 6px 17px;
+                }
+            }
+            @media(max-width: 767px){
+                position: unset;
+                height: 300px;
+                align-items: center;
+            }
+        }
+    }
+    .contentTop{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 48px 0 0 0;
+        a{
+            width: calc(25% - 12px);
+        }
+        @media(max-width: 1083px){
+            margin: 20px 0 0 0;
+            padding: 0 36px;
+            flex-wrap: wrap;
+        }
+        @media(max-width: 539px){
+            padding: 0 12px;
+        }
+
+    }
+}
+
+/* 下面banner區塊 */
+.bannerBtm{
+    position: relative;
+    padding: 48px 0 0 0;
+    .bannerBtm-img-1{
+        display: block;
+        @media(max-width: 1083px){
+            display: none;
+        }
+    }
+    .bannerBtm-img-2{
+        display: none;
+        @media(max-width: 1083px){
+            display: block;
+        }
+        @media(max-width: 767px){
+            display: none;
+        }
+    }
+    .bannerBtm-img-3{
+        display: none;
+        @media(max-width: 767px){
+            display: block;
+        }
+    }
+    .bannerBtm-container{
+        height: 100%;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 0 68px;
+        .bannerBtm-title{
+            color: black;
+            font-size: 45px;
+            padding: 2px 0 3px;
+            line-height: 28px;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+            @media(max-width: 1399px){
+                font-size: 24px;
+            }
+        }
+        .bannerBtm-conten{
+            color: black;
+            font-style: 15px;
+            font-weight: 400;
+            padding: 20px 0;
+        }
+        .bannerBtm-btn{
+            width: 121px;
+            height: 37px;
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 10px 20px 6px 22px;
+            margin: 12px 0 0 0;
+            transition: .4s;
+            .bannerBtm-btn-txt{
+                color: white;
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .bannerBtm-btn-icon{
+                margin: 0 0 0 3px;
+                width: 12px;
+                height: 15px;
+            }
+            &:hover{
+                padding: 10px 15px 6px 17px;
+            }
+        }
+        @media(max-width: 767px){
+            position: unset;
+            height: 300px;
+            align-items: center;
+        }
+    }
+    @media (max-width:1083px){
+        background-color: #e6e6e6;
+        margin: 20px 0 0 0;
+        padding: 0 0 0 0;
+        flex-wrap: wrap;
+    }
+}
+/* 下面大標題 */
+.contentBtmHeading{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 36px 0 4px 0px;
+    @media(max-width: 1083px){
+        padding:48px 0 4px 48px;
+    }
+    @media(max-width: 539px){
+        padding:48px 0 4px 24px;
+    }
+}
+/* 下面圖文區塊 */
+.contentBtm{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 15px 0 0 0;
+    @media(max-width: 1083px){
+        margin: 20px 0 0 0;
+        padding: 0 36px;
+        flex-wrap: wrap;
+    }
+    @media(max-width: 539px){
+        padding: 0 12px;
+    }
+
+}
+/* follow區塊 */
+.follow {
+    padding: 48px 0 70px 0;
+    height: 80px;
+    color: rgba(0,0,0,.6);
+    display: flex;
+    .follow-text{
+        line-height: 30px;
+    }
+    .social-media{
+        img{
+        display: inline-block;
+        margin: 0 0 0 8px;
+        width:32px;
+        height:32px;
+        border: 2px solid white;
+        }
+    }
+    @media (max-width:1083px){
+        padding: 0 24px;
+    }
+    @media (max-width:859px){
+        font-size: 15px;
+        padding: 48px 0 48px 48px;
+    }
+    @media(max-width: 539px){
+        padding: 48px 0 48px 20px;
+    }
+
+}
+
+/* footer區塊 */
+footer{
+    display: flex;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 0 5%;
+    margin: auto;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    position: relative;
+    .footerTop , .footerBtm{
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0 0 5% 0;
+        .footer-head{
+            font-size: 15px;
+            line-height: 15px;
+            color: #616161;
+            li{
+                font-size: 11px;
+                padding: 5px 0;
+                color: #616161;
+            }
+        }
+        @media(max-width: 1083px){
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        @media(max-width: 539px){
+            flex-flow: column;
+        }
+    }
+    li{
+        list-style: none;
+    }
+    @media (max-width:1083px){
+        flex-flow: column wrap;
+    }
+}
+
+.language{
+    display: flex;
+    padding: 0 0 0 40px;
+    align-self: flex-end;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 5px;
+    left: 1%;
+    @media (max-width:767px){
+        position: unset;
+        margin: 0 auto 0 0;
+        justify-content: flex-start;
+        padding: 0;
+    }
+}
+.lan-img{
+    margin: 0 15px;
+}
+.lan-text{
+    font-size: 12px;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.privacy{
+    margin-left: auto;
+    position: absolute;
+    bottom: 5px;
+    right: 1%;
+    li{
+        display: inline-block;
+        list-style: none;
+        font-size: 10px;
+        margin: 0 5px;
+    }
+    @media(max-width: 767px){
+        position: unset;
+        margin-left: unset;
+        ul{
+            padding: 0 0 0 10px;
+        }
+    }
+}
